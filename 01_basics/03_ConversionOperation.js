@@ -21,3 +21,8 @@ console.log(numberToBoolean);
 let another = ""
 let anotherToString = String(another)
 console.log(anotherToString);
+
+//************************************OPERATIONS***********************************/
+let value = 3
+let negvalue = -value
+console.log(negvalue);
