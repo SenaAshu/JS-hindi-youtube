@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <link rel="stylesheet" href="three2.css">
+</head>
+<body>
+    <h1>Chai Aur Code</h1>
+    <div class="buttons">
+        <button id="start">START</button>
+        <button id="stop">STOP</button></div>
+    <h3></h3>
+</body>
+<script>
+    // const update = function(str){
+    //     document.querySelector('h3').innerHTML = str+ Date.now()
+    // }
+    // const timeupdate = setInterval(update,1000,'Current time-stamp is: ')
+
+    // let updateTime = document.querySelector('#start').addEventListener('click',function(str){
+    //     document.querySelector('h3').innerHTML = str+ Date.now()
+    // })
+    // setInterval(updateTime,1000,'Current time-stamp is: ')
+
+    let intervalid;
+
+    const time = function(str){
+        document.querySelector('h3').innerHTML = str+Math.round(Date.now()/1000)
+    }
+    
+    document.querySelector('#start').addEventListener('click',function(){
+        intervalid = setInterval(time,1000,'running time is: ')
+    })
+
+    document.querySelector('#stop').addEventListener('click',function(){
+        document.querySelector('h3').innerHTML = 'Stopped'
+        clearInterval(intervalid);
+        
+    })
+
+</script>
+</html>

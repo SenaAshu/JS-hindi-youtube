@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML elements</title>
+  </head>
+  <body style="background-color: #414141; color: aliceblue">
+    <h2>Amazing image</h2>
+    <div>
+      <ul id="images">
+        <li>
+          <img
+            width="200px"
+            height="200px"
+            id="photoshop"
+            src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt="photoshop"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="japan"
+            src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="river"
+            src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="owl"
+            src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="prayer"
+            src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <a style="color: aliceblue" href="https://google.com" id="google"
+            >Google</a
+          >
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    //javascript k ander jitna bhi code run hota h , sab sequentially hni hota h,there is some exceptions but JS is a sequentially running language.
+
+    // document.getElementById('owl').onclick = function(){
+    //     alert('Owl clicked')              This is not a good way cause in onclick case,it doesnt give much information.Features bhi kam deta h
+    // }                                        Instead we should use eventlistener
+
+    // document.getElementById("owl").addEventListener("click", function (e) {
+    //   // alert('Owl clicked again')
+    // }); //need to read - type,timestamp,defaultprevented,target,toElement,srcElement,currenttarget,clientX,clientY,screenX,screenY,altkey,ctrlkey,shiftkey,keycode
+
+    //event propagation 
+    //event bubbling(defailt) & event capturing
+
+    // document.getElementById("images").addEventListener("click", function (e) {
+        // console.log('Clicked inside the UL');
+    // },false)
+    // document.getElementById("owl").addEventListener("click", function (e) {
+        // console.log('OWL clicked');
+    // },false)
+    //event bubbling :- bubble niche se upar jaata h  #false
+    // event capturing ulta h bubbling k #true
+    //importance k basis pe hum ye sab change karna hota h
+
+   // e.stopPropogation() ---> ye bubble hone se rok lega
+
+   //e.preventDefault() ---> will prevent the default process
+
+//    document.querySelector('#images').addEventListener('click',function(e){
+    // console.log(e.target.parentNode);  //--->will target the parent node.targeted the current li
+    // let removeIt = e.target.parentNode
+
+    // removeIt.remove() //N0w the imaGe will be removed
+    // but but but whn u click on that google link.it removes all the things in an instant that we dont want
+    // e.target m <li> aaya and parentnode m ul aa gya
+
+        //e.target.tagName -->this will show the content is image(IMG) or link(LI)
+
+//         document.querySelector('#images').addEventListener('click', function(e){
+//             e.preventDefault()
+//         console.log(e.target.tagName);
+//         if (e.target.tagName === 'IMG') {
+//             console.log(e.target.id);
+//             let removeIt = e.target.parentNode
+//             removeIt.remove()
+//         }
+
+//    })
+// document.addEventListener('click', function(event) {
+//     console.log(event.timeStamp); // e.g., 1234567890
+// });
+// document.addEventListener('click', function(event) {
+//     console.log(event.target); // The element that was clicked
+// });
+// const pic = document.querySelector("#photoshop")
+// pic.addEventListener('mouseover', function(event) {
+//   pic.style.width = '400px'
+//     // console.log(event.toElement); // The element the pointer is moving to
+// });
+
+// const pic2 = document.querySelector("#photoshop")
+// pic2.addEventListener('mouseout', function(event) {
+//   pic2.style.width = '200px'
+//     // console.log(event.toElement); // The element the pointer is moving to
+// });
+
+const pic = document.querySelector("#photoshop")
+pic.addEventListener('click', function(event) {
+    console.log(pic.clientX, pic.clientY );
+
+});
+
+
+
+
+
+//   </script>
+// </html>
